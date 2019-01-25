@@ -13,16 +13,16 @@ public class PlayerMovement : MonoBehaviour {
     public bool movingRight = false;
     public bool movingUp = false;
     public bool movingDown = false;
-
+   
 
     // Use this for initialization
     void Start () {
-       rbPlayer = GetComponent<Rigidbody2D>();
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update ()
+    {
         //Movement
         #region
         //Move Left
@@ -73,19 +73,13 @@ public class PlayerMovement : MonoBehaviour {
             movingUp = false;
         }
 
-        /*Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        moveVelocity = moveInput * speed;*/
         #endregion
 
-        //Interact
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("J'intéragis !");
-        }
+
     }
 
     void FixedUpdate()
     {
-       //rbPlayer.MovePosition(rbPlayer.position + moveVelocity * Time.deltaTime);
     }
+
 }

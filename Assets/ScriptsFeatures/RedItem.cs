@@ -6,6 +6,8 @@ public class RedItem : MonoBehaviour {
 
     public bool redCube = false;
 
+    public bool doRefForCane = false;
+
     public RessourceManager my_RM;
 
     // Use this for initialization
@@ -18,6 +20,7 @@ public class RedItem : MonoBehaviour {
         if (redCube == true && Input.GetKeyDown(KeyCode.Return))
         {
             my_RM.AddRedItem();
+            doRefForCane = true;
             Destroy(gameObject);
         }
     }

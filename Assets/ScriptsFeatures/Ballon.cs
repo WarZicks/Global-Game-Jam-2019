@@ -11,6 +11,8 @@ public class Ballon : MonoBehaviour {
     public bool lvl2Endu = false;
     public bool lvl3Endu = false;
 
+    public bool inTrigger = false;
+
     // Use this for initialization
     void Start () {
         BallonOn = true;
@@ -20,12 +22,7 @@ public class Ballon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true)
         {
             Debug.Log("Playing");
             PlayBall++;
@@ -48,6 +45,21 @@ public class Ballon : MonoBehaviour {
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft += 150f * Time.deltaTime;
                 }
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            inTrigger = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            inTrigger = false;
         }
     }
 }

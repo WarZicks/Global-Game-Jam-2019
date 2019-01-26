@@ -6,6 +6,8 @@ public class BlueItem : MonoBehaviour {
 
     public bool blueCube = false;
 
+    public bool doRefForBalloon = false;
+
     public RessourceManager my_RM;
 
     // Use this for initialization
@@ -20,6 +22,7 @@ public class BlueItem : MonoBehaviour {
         if (blueCube == true && Input.GetKeyDown(KeyCode.Return))
         {
             my_RM.AddBlueItem();
+            doRefForBalloon = true;
             Destroy(gameObject);
         }
     }

@@ -11,6 +11,8 @@ TagManager:
   - Endurance
   - Aquarium
   - FishingCane
+  - Lac
+  - Home
   layers:
   - Default
   - TransparentFX

@@ -9,18 +9,26 @@ public class Lac : MonoBehaviour {
     public int gigaFish = 0;
 
     public bool inTrigger = false;
+    public bool getRefCane = false;
+
+    AudioSource soundFishing;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        soundFishing = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true)
+        if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true && getRefCane == true)
         {
             Fishing();
+            if (!soundFishing.isPlaying)
+            {
+                soundFishing.Play();
+            }
+            
         }
     }
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Upgrade : MonoBehaviour {
 
+    public AudioSource soundUpgrade;
+
     public GameObject upgradeBoardUI;
     public bool myBoardIsUp = false;
 
@@ -32,6 +34,8 @@ public class Upgrade : MonoBehaviour {
         my_TakeFishingCane = GameObject.FindGameObjectWithTag("GreenItem").GetComponent<GreenItem>();
         my_TakeBalloon = GameObject.FindGameObjectWithTag("BlueItem").GetComponent<BlueItem>();
         my_TakeAquarium = GameObject.FindGameObjectWithTag("RedItem").GetComponent<RedItem>();
+
+        soundUpgrade = GetComponent<AudioSource>();
 
         /*my_Balloon = GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>();
         my_Aquarium = GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>();*/
@@ -84,6 +88,7 @@ public class Upgrade : MonoBehaviour {
             my_FishingCane.lvl1Fish = false;
             my_FishingCane.lvl2Fish = true;
             upgradeFishingCaneLvl2Done = true;
+            soundUpgrade.Play();
         }
     }
     public void UpgradeFishingCaneLVL3()
@@ -94,6 +99,7 @@ public class Upgrade : MonoBehaviour {
             my_FishingCane.lvl2Fish = false;
             my_FishingCane.lvl3Fish = true;
             upgradeFishingCaneLvl3Done = true;
+            soundUpgrade.Play();
         }
     }
 
@@ -106,6 +112,7 @@ public class Upgrade : MonoBehaviour {
             my_Balloon.lvl1Endu = false;
             my_Balloon.lvl2Endu = true;
             upgradeBalloonLvl2Done = true;
+            soundUpgrade.Play();
         }
     }
     public void UpgradeBalloonLVL3()
@@ -116,6 +123,7 @@ public class Upgrade : MonoBehaviour {
             my_Balloon.lvl2Endu = false;
             my_Balloon.lvl3Endu = true;
             upgradeBalloonLvl3Done = true;
+            soundUpgrade.Play();
         }
     }
 

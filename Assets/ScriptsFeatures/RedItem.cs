@@ -10,10 +10,14 @@ public class RedItem : MonoBehaviour {
 
     public RessourceManager my_RM;
 
+    public AudioSource soundCollect;
+
     // Use this for initialization
     void Start () {
         my_RM = GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>();
-	}
+
+        soundCollect = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,7 +25,10 @@ public class RedItem : MonoBehaviour {
         {
             my_RM.AddRedItem();
             doRefForCane = true;
-            Destroy(gameObject);
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            soundCollect.Play();
+            Destroy(gameObject, 1f);
         }
     }
 

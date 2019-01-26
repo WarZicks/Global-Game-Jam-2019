@@ -6,9 +6,11 @@ public class Bed : MonoBehaviour {
 
     public bool inTrigger = false;
 
+    public AudioSource soundSleep;
+
 	// Use this for initialization
 	void Start () {
-		
+        soundSleep = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -18,6 +20,7 @@ public class Bed : MonoBehaviour {
             Debug.Log("Sleep");
             GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime;
             GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft = GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu;
+            soundSleep.Play();
 
             if (GameObject.FindGameObjectWithTag("Aquarium") != null)
             {

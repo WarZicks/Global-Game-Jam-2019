@@ -12,10 +12,14 @@ public class Aquarium : MonoBehaviour {
     public bool lvl3Time = false;
     public bool lvl4Time = false;
 
+    public AudioSource songPlayAquarium;
+
     // Use this for initialization
     void Start () {
         AquaOn = true;
         lvl1Time = true;
+
+        songPlayAquarium = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -29,6 +33,10 @@ public class Aquarium : MonoBehaviour {
         {
             Debug.Log("SeeFish");
             SeeFish++;
+            if (!songPlayAquarium.isPlaying)
+            {
+                songPlayAquarium.Play();
+            }
 
             if (SeeFish == 1)
             {

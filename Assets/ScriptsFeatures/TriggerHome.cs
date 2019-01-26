@@ -13,11 +13,14 @@ public class TriggerHome : MonoBehaviour {
     public int gigaFishRessource = 0;
     public int woodRessource = 0;
 
+    public AudioSource soundPutItem;
 
     // Use this for initialization
     void Start () {
 
         my_RM = GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>();
+
+        soundPutItem = GetComponent<AudioSource>();
 
     }
 	
@@ -44,16 +47,19 @@ public class TriggerHome : MonoBehaviour {
             {
                 my_RM.Aquarium.SetActive(true);
                 my_RM.redItem = 0;
+                soundPutItem.Play();
             }
             if (my_RM.blueItem >= 1)
             {
                 my_RM.Ballon.SetActive(true);
                 my_RM.blueItem = 0;
+                soundPutItem.Play();
             }
             if (my_RM.greenItem >= 1)
             {
                 my_RM.FishingCane.SetActive(true);
                 my_RM.greenItem = 0;
+                soundPutItem.Play();
             }
 
             if (GameObject.FindGameObjectWithTag("Aquarium") != null)

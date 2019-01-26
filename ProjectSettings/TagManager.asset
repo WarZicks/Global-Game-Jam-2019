@@ -16,6 +16,7 @@ TagManager:
   - GreenItem
   - BlueItem
   - RedItem
+  - Wood
   layers:
   - Default
   - TransparentFX

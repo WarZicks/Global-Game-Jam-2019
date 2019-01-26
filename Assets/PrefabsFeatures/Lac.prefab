@@ -51,7 +51,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -78,6 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7b18cb7e093cd42938a2b1e02459b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fish: 0
+  superFish: 0
+  gigaFish: 0
 --- !u!212 &212634876314992252
 SpriteRenderer:
   m_ObjectHideFlags: 1

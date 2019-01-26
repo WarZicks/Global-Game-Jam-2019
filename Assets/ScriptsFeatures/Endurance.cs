@@ -6,17 +6,16 @@ using UnityEngine.UI;
 public class Endurance : MonoBehaviour {
 
     Image EnduranceBar;
-    public float maxEndu = 3f;
+    public float maxEndu;
     public float enduLeft;
     public bool CanRun = false;
     public bool HaveEndu = true;
 
 	// Use this for initialization
 	void Start () {
-
-        EnduranceBar = GetComponent<Image>();
+        maxEndu = 150f*Time.deltaTime;
+        EnduranceBar = GetComponent<Image>();      
         enduLeft = maxEndu;
-
 	}
 	
 	// Update is called once per frame

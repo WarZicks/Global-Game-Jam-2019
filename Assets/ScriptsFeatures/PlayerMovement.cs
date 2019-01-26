@@ -127,6 +127,57 @@ public class PlayerMovement : MonoBehaviour {
             }
             #endregion
         }
+
+        if (GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().BallonOn == true)
+        {
+            if (Input.GetKeyDown(KeyCode.I) && GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().lvl1Endu == true)
+            {
+                Debug.Log("Lvl2Ballon");
+                GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().lvl1Endu = false;
+                GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().lvl2Endu = true;
+            }
+
+            else if (Input.GetKeyDown(KeyCode.I) && GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().lvl2Endu == true)
+            {
+                Debug.Log("Lvl3Ballon");
+                GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().lvl2Endu = false;
+                GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().lvl3Endu = true;
+            }
+
+            else if (Input.GetKeyDown(KeyCode.I) && GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().lvl3Endu == true)
+            {
+                Debug.Log("MaxLvlBallon");
+            }
+        }
+
+        if (GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().AquaOn == true)
+        {
+            if (Input.GetKeyDown(KeyCode.O) && GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl1Time == true)
+            {
+                Debug.Log("Lvl2Aquarium");
+                GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl1Time = false;
+                GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl2Time = true;
+            }
+
+            else if (Input.GetKeyDown(KeyCode.O) && GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl2Time == true)
+            {
+                Debug.Log("Lvl3Aquarium");
+                GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl2Time = false;
+                GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl3Time = true;
+            }
+
+            else if (Input.GetKeyDown(KeyCode.O) && GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl3Time == true)
+            {
+                Debug.Log("Lvl4Aquarium");
+                GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl3Time = false;
+                GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl4Time = true;
+            }
+
+            else if (Input.GetKeyDown(KeyCode.O) && GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl4Time == true)
+            {
+                Debug.Log("MaxLvlAquarium");
+            }
+        }
     }
 
     void FixedUpdate()

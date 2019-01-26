@@ -17,7 +17,6 @@ public class RedItem : MonoBehaviour {
 	void Update () {
         if (redCube == true && Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("Red");
             my_RM.AddRedItem();
             Destroy(gameObject);
         }

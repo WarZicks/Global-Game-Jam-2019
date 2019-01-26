@@ -19,7 +19,6 @@ public class BlueItem : MonoBehaviour {
     {
         if (blueCube == true && Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("Red");
             my_RM.AddBlueItem();
             Destroy(gameObject);
         }

@@ -20,6 +20,9 @@ public class Bed : MonoBehaviour {
         {
             Debug.Log("Sleep");
             GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime;
+            GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft = GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu;
+            GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().SeeFish = 0;
+            GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().PlayBall = 0;
         }
     }
 }

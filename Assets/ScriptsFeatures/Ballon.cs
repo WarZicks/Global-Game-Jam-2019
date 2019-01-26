@@ -5,10 +5,16 @@ using UnityEngine;
 public class Ballon : MonoBehaviour {
 
     public bool BallonOn = false;
+    public int PlayBall = 0;
 
-	// Use this for initialization
-	void Start () {
+    public bool lvl1Endu = false;
+    public bool lvl2Endu = false;
+    public bool lvl3Endu = false;
+
+    // Use this for initialization
+    void Start () {
         BallonOn = true;
+        lvl1Endu = true;
         GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().CanRun=true;
     }
 	
@@ -22,8 +28,26 @@ public class Ballon : MonoBehaviour {
         if (collision.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("Playing");
-            GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu++;
-            GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft++;
+            PlayBall++;
+
+            if (PlayBall == 3)
+            {
+                if (lvl1Endu == true)
+                {
+                    GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu += 50f * Time.deltaTime;
+                    GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft += 50f * Time.deltaTime;
+                }
+                if (lvl2Endu == true)
+                {
+                    GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu += 100f * Time.deltaTime;
+                    GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft += 100f * Time.deltaTime;
+                }
+                if (lvl3Endu == true)
+                {
+                    GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu += 150f * Time.deltaTime;
+                    GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft += 150f * Time.deltaTime;
+                }
+            }
         }
     }
 }

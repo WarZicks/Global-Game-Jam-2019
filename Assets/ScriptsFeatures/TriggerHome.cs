@@ -41,7 +41,6 @@ public class TriggerHome : MonoBehaviour {
 
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("In");
             GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().InHome = true;
         }
     }
@@ -50,7 +49,6 @@ public class TriggerHome : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Out");
             GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().InHome = false;
         }
     }

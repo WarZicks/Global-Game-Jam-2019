@@ -19,7 +19,6 @@ public class GreenItem : MonoBehaviour {
     {
         if (greenCube == true && Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("Red");
             my_RM.AddGreenItem();
             Destroy(gameObject);
         }

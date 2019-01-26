@@ -606,7 +606,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 80
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -913,6 +913,7 @@ GameObject:
   - component: {fileID: 849346569}
   - component: {fileID: 849346570}
   - component: {fileID: 849346571}
+  - component: {fileID: 849346572}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -955,7 +956,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 8fb98a6035269e64a998f9b56828fc4f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3ae4480b4c5a1d449684acd8f50dad6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1015,7 +1016,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.375, y: 1.375}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1040,6 +1041,24 @@ MonoBehaviour:
   movingRight: 0
   movingUp: 0
   movingDown: 0
+--- !u!95 &849346572
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 849346566}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 07aa9283834bbae4ab4a5f30f44c9f27, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &881624207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,8 +1102,8 @@ MonoBehaviour:
   redItem: 0
   blueItem: 0
   greenItem: 0
-  putRed: {fileID: 324774903}
-  putBlue: {fileID: 603566626}
+  Aquarium: {fileID: 0}
+  Ballon: {fileID: 0}
   putGreen: {fileID: 1330637589}
   my_UIManager: {fileID: 0}
 --- !u!1 &1099846159
@@ -1646,7 +1665,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a1be98f2fcdd64aac37ff9951c50be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  my_RM: {fileID: 0}
 --- !u!1001 &1934614495
 Prefab:
   m_ObjectHideFlags: 0
@@ -1725,7 +1743,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 849346568}
   m_Follow: {fileID: 849346568}
   m_Lens:
-    FieldOfView: 80
+    FieldOfView: 40
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000

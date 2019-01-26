@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
+    public Animator animator;
+
     public float speed;
 
     private Rigidbody2D rbPlayer;
@@ -31,10 +33,16 @@ public class PlayerMovement : MonoBehaviour {
             transform.position += transform.right * -speed * Time.deltaTime;
             speed = 10;
             movingLeft = true;
+            animator.SetFloat("Speed", 1);
+            animator.SetBool("FaceLeft", true);
+            animator.SetBool("FaceRight", false);
+            animator.SetBool("FaceUp", false);
+            animator.SetBool("FaceDown", false);
         }
         if (Input.GetKeyUp(KeyCode.Q))
         {
             movingLeft = false;
+            animator.SetFloat("Speed", 0);
         }
 
         //Move Right
@@ -43,10 +51,16 @@ public class PlayerMovement : MonoBehaviour {
             transform.position += transform.right * speed * Time.deltaTime;
             speed = 10;
             movingRight = true;
+            animator.SetFloat("Speed", 1);
+            animator.SetBool("FaceLeft", false);
+            animator.SetBool("FaceRight", true);
+            animator.SetBool("FaceUp", false);
+            animator.SetBool("FaceDown", false);
         }
         if (Input.GetKeyUp(KeyCode.D))
         {
             movingRight = false;
+            animator.SetFloat("Speed", 0);
         }
 
         //Move Down 
@@ -55,10 +69,16 @@ public class PlayerMovement : MonoBehaviour {
             transform.position += transform.up * -speed * Time.deltaTime;
             speed = 10;
             movingDown = true;
+            animator.SetFloat("Speed", 1);
+            animator.SetBool("FaceLeft", false);
+            animator.SetBool("FaceRight", false);
+            animator.SetBool("FaceUp", false);
+            animator.SetBool("FaceDown", true);
         }
         if (Input.GetKeyUp(KeyCode.S))
         {
             movingDown = false;
+            animator.SetFloat("Speed", 0);
         }
 
         //Move Up
@@ -67,10 +87,16 @@ public class PlayerMovement : MonoBehaviour {
             transform.position += transform.up * speed * Time.deltaTime;
             speed = 10;
             movingUp = true;
+            animator.SetFloat("Speed", 1);
+            animator.SetBool("FaceLeft", false);
+            animator.SetBool("FaceRight", false);
+            animator.SetBool("FaceUp", true);
+            animator.SetBool("FaceDown", false);
         }
         if (Input.GetKeyUp(KeyCode.Z))
         {
             movingUp = false;
+            animator.SetFloat("Speed", 0);
         }
 
         #endregion

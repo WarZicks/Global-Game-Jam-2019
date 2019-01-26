@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKey(KeyCode.Q) && !movingDown && !movingRight && !movingUp)
         {
             transform.position += transform.right * -speed * Time.deltaTime;
-            speed = 10;
+            speed = 5;
             movingLeft = true;
             animator.SetFloat("Speed", 1);
             animator.SetBool("FaceLeft", true);
@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKey(KeyCode.D) && !movingDown && !movingLeft && !movingUp)
         {
             transform.position += transform.right * speed * Time.deltaTime;
-            speed = 10;
+            speed = 5;
             movingRight = true;
             animator.SetFloat("Speed", 1);
             animator.SetBool("FaceLeft", false);
@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKey(KeyCode.S) && !movingLeft && !movingRight && !movingUp)
         {
             transform.position += transform.up * -speed * Time.deltaTime;
-            speed = 10;
+            speed = 5;
             movingDown = true;
             animator.SetFloat("Speed", 1);
             animator.SetBool("FaceLeft", false);
@@ -85,7 +85,7 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKey(KeyCode.Z) && !movingDown && !movingRight && !movingLeft)
         {
             transform.position += transform.up * speed * Time.deltaTime;
-            speed = 10;
+            speed = 5;
             movingUp = true;
             animator.SetFloat("Speed", 1);
             animator.SetBool("FaceLeft", false);
@@ -109,7 +109,7 @@ public class PlayerMovement : MonoBehaviour {
                 if (Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.LeftShift) && !movingDown && !movingRight && !movingUp)
                 {
                     transform.position += transform.right * -speed * Time.deltaTime;
-                    speed = 20;
+                    speed = 10;
                     movingLeft = true;
                 }
                 if (Input.GetKeyUp(KeyCode.Q))
@@ -121,7 +121,7 @@ public class PlayerMovement : MonoBehaviour {
                 if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift) && !movingDown && !movingLeft && !movingUp)
                 {
                     transform.position += transform.right * speed * Time.deltaTime;
-                    speed = 20;
+                    speed = 10;
                     movingRight = true;
                 }
                 if (Input.GetKeyUp(KeyCode.D))
@@ -133,7 +133,7 @@ public class PlayerMovement : MonoBehaviour {
                 if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift) && !movingLeft && !movingRight && !movingUp)
                 {
                     transform.position += transform.up * -speed * Time.deltaTime;
-                    speed = 20;
+                    speed = 10;
                     movingDown = true;
                 }
                 if (Input.GetKeyUp(KeyCode.S))
@@ -145,7 +145,7 @@ public class PlayerMovement : MonoBehaviour {
                 if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.LeftShift) && !movingDown && !movingRight && !movingLeft)
                 {
                     transform.position += transform.up * speed * Time.deltaTime;
-                    speed = 20;
+                    speed = 10;
                     movingUp = true;
                 }
                 if (Input.GetKeyUp(KeyCode.Z))
@@ -156,38 +156,6 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
 
-        UpgradeBallon();
-        UpgradeAquarium();
-        UpgradeFishingcane();
-
-    }
-
-    public void UpgradeBallon ()
-    {
-        if (GameObject.FindGameObjectWithTag("Ballon") != null)
-        {
-            if (GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().BallonOn == true)
-            {
-                if (Input.GetKeyDown(KeyCode.I) && GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().lvl1Endu == true)
-                {
-                    Debug.Log("Lvl2Ballon");
-                    GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().lvl1Endu = false;
-                    GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().lvl2Endu = true;
-                }
-
-                else if (Input.GetKeyDown(KeyCode.I) && GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().lvl2Endu == true)
-                {
-                    Debug.Log("Lvl3Ballon");
-                    GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().lvl2Endu = false;
-                    GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().lvl3Endu = true;
-                }
-
-                else if (Input.GetKeyDown(KeyCode.I) && GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().lvl3Endu == true)
-                {
-                    Debug.Log("MaxLvlBallon");
-                }
-            }
-        }
     }
 
     public void UpgradeAquarium()
@@ -220,34 +188,6 @@ public class PlayerMovement : MonoBehaviour {
                 else if (Input.GetKeyDown(KeyCode.O) && GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl4Time == true)
                 {
                     Debug.Log("MaxLvlAquarium");
-                }
-            }
-        }
-    }
-
-    public void UpgradeFishingcane()
-    {
-        if (GameObject.FindGameObjectWithTag("FishingCane") != null)
-        {
-            if (GameObject.FindGameObjectWithTag("FishingCane").GetComponent<FishingCane>().FishCaneOn == true)
-            {
-                if (Input.GetKeyDown(KeyCode.P) && GameObject.FindGameObjectWithTag("FishingCane").GetComponent<FishingCane>().lvl1Fish == true)
-                {
-                    Debug.Log("Lvl2FishingCane");
-                    GameObject.FindGameObjectWithTag("FishingCane").GetComponent<FishingCane>().lvl1Fish = false;
-                    GameObject.FindGameObjectWithTag("FishingCane").GetComponent<FishingCane>().lvl2Fish = true;
-                }
-
-                else if (Input.GetKeyDown(KeyCode.P) && GameObject.FindGameObjectWithTag("FishingCane").GetComponent<FishingCane>().lvl2Fish == true)
-                {
-                    Debug.Log("Lvl3FishingCane");
-                    GameObject.FindGameObjectWithTag("FishingCane").GetComponent<FishingCane>().lvl2Fish = false;
-                    GameObject.FindGameObjectWithTag("FishingCane").GetComponent<FishingCane>().lvl3Fish = true;
-                }
-
-                else if (Input.GetKeyDown(KeyCode.P) && GameObject.FindGameObjectWithTag("FishingCane").GetComponent<FishingCane>().lvl3Fish == true)
-                {
-                    Debug.Log("MaxLvlFishingCane");
                 }
             }
         }

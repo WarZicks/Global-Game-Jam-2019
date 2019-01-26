@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour {
     public Lac my_Lac;
 
     Image TimerBar;
-    public float maxTime = 5f;
+    public float maxTime;
     public float timeLeft;
     public GameObject timesUp;
     public bool InHome;

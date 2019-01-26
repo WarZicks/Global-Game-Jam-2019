@@ -34,7 +34,7 @@ public class TriggerHome : MonoBehaviour {
             }
             if (my_RM.greenItem >= 1)
             {
-                my_RM.putGreen.SetActive(true);
+                my_RM.FishingCane.SetActive(true);
                 my_RM.greenItem = 0;
             }
         }

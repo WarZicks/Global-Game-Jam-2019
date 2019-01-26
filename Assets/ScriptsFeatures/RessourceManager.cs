@@ -10,7 +10,7 @@ public class RessourceManager : MonoBehaviour {
 
     public GameObject Aquarium;
     public GameObject Ballon;
-    public GameObject putGreen;
+    public GameObject FishingCane;
 
     public UIManager my_UIManager;
 

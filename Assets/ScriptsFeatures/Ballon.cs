@@ -20,8 +20,8 @@ public class Ballon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -37,12 +37,12 @@ public class Ballon : MonoBehaviour {
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu += 50f * Time.deltaTime;
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft += 50f * Time.deltaTime;
                 }
-                if (lvl2Endu == true)
+                else if (lvl2Endu == true)
                 {
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu += 100f * Time.deltaTime;
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft += 100f * Time.deltaTime;
                 }
-                if (lvl3Endu == true)
+                else if (lvl3Endu == true)
                 {
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu += 150f * Time.deltaTime;
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft += 150f * Time.deltaTime;

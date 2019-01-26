@@ -36,17 +36,17 @@ public class Aquarium : MonoBehaviour {
                 {
                     Debug.Log("NoFish");
                 }
-                if (lvl2Time == true)
+                else if (lvl2Time == true)
                 {
                     GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime += GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime * 1.05f;
                     GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft += GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft * 1.05f;
                 }
-                if (lvl3Time == true)
+                else if (lvl3Time == true)
                 {
                     GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime += GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime * 1.1f;
                     GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft += GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft * 1.1f;
                 }
-                if (lvl4Time == true)
+                else if (lvl4Time == true)
                 {
                     GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime += GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime * 1.2f;
                     GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft += GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft * 1.2f;

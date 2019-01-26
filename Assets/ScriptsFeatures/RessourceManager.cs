@@ -8,6 +8,8 @@ public class RessourceManager : MonoBehaviour {
     public int blueItem;
     public int greenItem;
 
+    public int wood;
+
     public GameObject Aquarium;
     public GameObject Ballon;
     public GameObject FishingCane;

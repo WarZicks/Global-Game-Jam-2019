@@ -9,6 +9,7 @@ public class TriggerHome : MonoBehaviour {
     public int fishRessource = 0;
     public int superFishRessource = 0;
     public int gigaFishRessource = 0;
+    public int woodRessource = 0;
 
 
     // Use this for initialization
@@ -28,9 +29,14 @@ public class TriggerHome : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().InHome = true;
-            fishRessource = GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>().fish;
-            superFishRessource = GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>().superFish;
-            gigaFishRessource = GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>().gigaFish;
+            fishRessource += GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>().fish;
+            GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>().fish = 0;
+            superFishRessource += GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>().superFish;
+            GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>().superFish = 0;
+            gigaFishRessource += GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>().gigaFish;
+            GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>().gigaFish = 0;
+            woodRessource += GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().wood;
+            GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().wood = 0;
 
             if (my_RM.redItem >= 1)
             {

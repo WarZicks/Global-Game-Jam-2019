@@ -695,7 +695,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3516e950b5aea4a880141a457a647d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 1000
+  my_RM: {fileID: 0}
+  my_Lac: {fileID: 0}
+  maxTime: 5
   timeLeft: 0
   timesUp: {fileID: 1600875677}
   InHome: 0

@@ -24,12 +24,12 @@ public class TriggerHome : MonoBehaviour {
         {
             if (my_RM.redItem >= 1)
             {
-                my_RM.putRed.SetActive(true);
+                my_RM.Aquarium.SetActive(true);
                 my_RM.redItem = 0;
             }
             if (my_RM.blueItem >= 1)
             {
-                my_RM.putBlue.SetActive(true);
+                my_RM.Ballon.SetActive(true);
                 my_RM.blueItem = 0;
             }
             if (my_RM.greenItem >= 1)

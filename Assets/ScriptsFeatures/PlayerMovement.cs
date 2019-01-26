@@ -75,7 +75,58 @@ public class PlayerMovement : MonoBehaviour {
 
         #endregion
 
+        if (GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().BallonOn && GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().HaveEndu)
+        {
+            #region
+            //Run Left
+            if (Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.LeftShift) && !movingDown && !movingRight && !movingUp)
+            {
+                transform.position += transform.right * -speed * Time.deltaTime;
+                speed = 20;
+                movingLeft = true;
+            }
+            if (Input.GetKeyUp(KeyCode.Q))
+            {
+                movingLeft = false;
+            }
 
+            //Run Right
+            if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift) && !movingDown && !movingLeft && !movingUp)
+            {
+                transform.position += transform.right * speed * Time.deltaTime;
+                speed = 20;
+                movingRight = true;
+            }
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                movingRight = false;
+            }
+
+            //Run Down 
+            if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift) && !movingLeft && !movingRight && !movingUp)
+            {
+                transform.position += transform.up * -speed * Time.deltaTime;
+                speed = 20;
+                movingDown = true;
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                movingDown = false;
+            }
+
+            //Run Up
+            if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.LeftShift) && !movingDown && !movingRight && !movingLeft)
+            {
+                transform.position += transform.up * speed * Time.deltaTime;
+                speed = 20;
+                movingUp = true;
+            }
+            if (Input.GetKeyUp(KeyCode.Z))
+            {
+                movingUp = false;
+            }
+            #endregion
+        }
     }
 
     void FixedUpdate()

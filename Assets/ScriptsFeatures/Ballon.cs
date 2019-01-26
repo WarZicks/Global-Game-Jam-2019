@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Ballon : MonoBehaviour {
 
+    public bool BallonOn = false;
+
 	// Use this for initialization
 	void Start () {
-		
-	}
+        BallonOn = true;
+        GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().CanRun=true;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -18,9 +21,9 @@ public class Ballon : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("Play");
-            GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime++;
-            GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft++;
+            Debug.Log("Playing");
+            GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu++;
+            GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft++;
         }
     }
 }

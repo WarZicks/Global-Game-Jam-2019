@@ -6,6 +6,8 @@ public class GreenItem : MonoBehaviour {
 
     public bool greenCube = false;
 
+    public bool doRefForCane = false;
+
     public RessourceManager my_RM;
 
     // Use this for initialization
@@ -20,6 +22,7 @@ public class GreenItem : MonoBehaviour {
         if (greenCube == true && Input.GetKeyDown(KeyCode.Return))
         {
             my_RM.AddGreenItem();
+            doRefForCane = true;
             Destroy(gameObject);
         }
     }

@@ -13,6 +13,7 @@ TagManager:
   - FishingCane
   - Lac
   - Home
+  - GreenItem
   layers:
   - Default
   - TransparentFX

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bed : MonoBehaviour {
 
+    public bool inTrigger = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -11,18 +13,36 @@ public class Bed : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true)
         {
             Debug.Log("Sleep");
             GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime;
             GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft = GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu;
-            GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().SeeFish = 0;
-            GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().PlayBall = 0;
+
+            if (GameObject.FindGameObjectWithTag("Aquarium") != null)
+            {
+                GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().SeeFish = 0;
+            }
+            if (GameObject.FindGameObjectWithTag("Ballon") != null)
+            {
+                GameObject.FindGameObjectWithTag("Ballon").GetComponent<Ballon>().PlayBall = 0;
+            }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            inTrigger = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            inTrigger = false;
         }
     }
 }

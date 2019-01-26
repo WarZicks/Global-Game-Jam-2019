@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Wood : MonoBehaviour {
 
+    public bool inTrigger = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -11,15 +13,25 @@ public class Wood : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true)
         {
             GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().wood++;
             Destroy(gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            inTrigger = true;
+        }
+    }
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            inTrigger = false;
         }
     }
 }

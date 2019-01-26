@@ -8,6 +8,8 @@ public class Lac : MonoBehaviour {
     public int superFish = 0;
     public int gigaFish = 0;
 
+    public bool inTrigger = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,16 +17,30 @@ public class Lac : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true)
         {
             Fishing();
         }
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            inTrigger = true;
+        }
+    }
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            inTrigger = false;
+        }
+    }
+
+
+
 
     public void Fishing ()
     {

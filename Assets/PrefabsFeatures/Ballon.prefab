@@ -212,6 +212,7 @@ MonoBehaviour:
   SkinBallon1: {fileID: 21300000, guid: c0d20548297198949a932daeda08f6c1, type: 3}
   SkinBallon2: {fileID: 21300000, guid: e3534dc7ca70ab44d94e2c0e791ca7a2, type: 3}
   SkinBallon3: {fileID: 21300000, guid: 47e27d144ad1f294ca85e46b82bdbc78, type: 3}
+  FeedbackEndu: {fileID: 0}
 --- !u!212 &212011412274830150
 SpriteRenderer:
   m_ObjectHideFlags: 1

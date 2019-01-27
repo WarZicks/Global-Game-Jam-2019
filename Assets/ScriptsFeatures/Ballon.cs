@@ -21,6 +21,9 @@ public class Ballon : MonoBehaviour {
     public Sprite SkinBallon2;
     public Sprite SkinBallon3;
 
+    public GameObject FeedbackEndu;
+    private float TimerFeedback = 3f;
+
     // Use this for initialization
     void Start () {
         BallonOn = true;
@@ -30,6 +33,7 @@ public class Ballon : MonoBehaviour {
         soundPlayBall = GetComponent<AudioSource>();
 
         my_PM = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+
     }
 
     // Update is called once per frame
@@ -68,20 +72,19 @@ public class Ballon : MonoBehaviour {
                 {
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu += 50f * Time.deltaTime;
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft += 50f * Time.deltaTime;
-                    
-
+                    StartCoroutine(FeebackEndu());
                 }
                 else if (lvl2Endu == true)
                 {
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu += 100f * Time.deltaTime;
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft += 100f * Time.deltaTime;
-                    
+                    StartCoroutine(FeebackEndu());
                 }
                 else if (lvl3Endu == true)
                 {
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu += 150f * Time.deltaTime;
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft += 150f * Time.deltaTime;
-
+                    StartCoroutine(FeebackEndu());
                 }
             }
         }
@@ -100,5 +103,12 @@ public class Ballon : MonoBehaviour {
         {
             inTrigger = false;
         }
+    }
+
+    IEnumerator FeebackEndu()
+    {
+        FeedbackEndu.SetActive(true);
+        yield return new WaitForSeconds(TimerFeedback);
+        FeedbackEndu.SetActive(false);
     }
 }

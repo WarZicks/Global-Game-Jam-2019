@@ -18,6 +18,8 @@ public class Timer : MonoBehaviour {
     public GameObject player;
     public PlayerMovement my_PM;
 
+    public Animator animFade;
+
 	// Use this for initialization
 	void Start () {
 
@@ -48,7 +50,8 @@ public class Timer : MonoBehaviour {
             {
                 my_PM.disableInput = true;
                 LoseItems();
-                Death();
+                StartCoroutine(Dead());
+                //Death();
             }
         }
 	}
@@ -63,9 +66,20 @@ public class Timer : MonoBehaviour {
         my_RM.greenItem = 0;
     }
 
-    void Death()
+    /*void Death()
     {
         player.transform.position = respawnPoint.transform.position;
+        my_PM.disableInput = false;
+    }*/
+
+    IEnumerator Dead()
+    {
+        my_PM.disableInput = true;
+        animFade.SetBool("DoFade", true);
+        yield return new WaitForSeconds(0.4f);
+        player.transform.position = respawnPoint.transform.position;
+        yield return new WaitForSeconds(3.6f);
+        animFade.SetBool("DoFade", false);
         my_PM.disableInput = false;
     }
 }

@@ -12,6 +12,8 @@ public class Bed : MonoBehaviour {
 
     public PlayerMovement my_PM;
 
+    public Animator animFade;
+
 	// Use this for initialization
 	void Start () {
         soundSleep = GetComponent<AudioSource>();
@@ -58,7 +60,9 @@ public class Bed : MonoBehaviour {
     IEnumerator TimerForInput()
     {
         my_PM.disableInput = true;
+        animFade.SetBool("DoFade", true);
         yield return new WaitForSeconds(timerInput);
+        animFade.SetBool("DoFade", false);
         my_PM.disableInput = false;
     }
 }

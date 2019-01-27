@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114739595674528844}
   - component: {fileID: 82027811607682720}
   - component: {fileID: 61112363010522016}
+  - component: {fileID: 61354526159622042}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -68,6 +69,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.25}
   m_EdgeRadius: 0
+--- !u!61 &61354526159622042
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469366198141942}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.32}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 0.25}
+  m_EdgeRadius: 0
 --- !u!82 &82027811607682720
 AudioSource:
   m_ObjectHideFlags: 1
@@ -77,7 +103,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2296a11b56389cf41a342670acf72be4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 18aa0b613dcb8b54fa8bb8c04e48f22e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -174,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c920c1cded1dd245a2aa532d62c9a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerInput: 8
+  timerInput: 5
   inTrigger: 0
   soundSleep: {fileID: 82027811607682720}
   my_PM: {fileID: 0}

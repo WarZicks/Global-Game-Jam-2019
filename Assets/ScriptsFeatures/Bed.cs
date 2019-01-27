@@ -20,7 +20,7 @@ public class Bed : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true)
+        if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true && my_PM.disableInput == false)
         {
             Debug.Log("Sleep");
             GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime;

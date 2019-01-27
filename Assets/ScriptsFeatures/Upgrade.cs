@@ -51,7 +51,7 @@ public class Upgrade : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true)
+        if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true && !myBoardIsUp)
         {
             upgradeBoardUI.SetActive(true);
             myBoardIsUp = true;
@@ -142,9 +142,15 @@ public class Upgrade : MonoBehaviour {
 
     public void ExitBoard()
     {
-        myBoardIsUp = false;
         upgradeBoardUI.SetActive(false);
         my_PM.disableInput = false;
+        StartCoroutine(ExitBoardCoroutine());
+    }
+
+    IEnumerator ExitBoardCoroutine()
+    {
+        yield return new WaitForSeconds(0.1f);
+        myBoardIsUp = false;
     }
 
 }

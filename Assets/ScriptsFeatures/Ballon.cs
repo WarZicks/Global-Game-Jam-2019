@@ -30,7 +30,6 @@ public class Ballon : MonoBehaviour {
         soundPlayBall = GetComponent<AudioSource>();
 
         my_PM = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-
     }
 
     // Update is called once per frame
@@ -76,14 +75,12 @@ public class Ballon : MonoBehaviour {
                 {
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu += 100f * Time.deltaTime;
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft += 100f * Time.deltaTime;
-                    soundPlayBall.Play();
                     
                 }
                 else if (lvl3Endu == true)
                 {
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu += 150f * Time.deltaTime;
                     GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft += 150f * Time.deltaTime;
-                    soundPlayBall.Play();
 
                 }
             }

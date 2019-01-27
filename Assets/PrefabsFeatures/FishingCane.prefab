@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114666047064591956}
   m_Layer: 0
   m_Name: FishingCane
-  m_TagString: Ballon
+  m_TagString: FishingCane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1541735635776880}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.35, y: 9.02, z: -0.56814337}
-  m_LocalScale: {x: 2.2065222, y: 5.720044, z: 4.920468}
+  m_LocalPosition: {x: 5.93, y: 4.25, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -51,12 +51,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.2
 --- !u!114 &114666047064591956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,6 +68,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fb38f8bc8916f40811805a769db09c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FishCaneOn: 0
+  lvl1Fish: 0
+  lvl2Fish: 0
+  lvl3Fish: 0
+  SkinCane1: {fileID: 21300000, guid: 866e3d1cbd7c8ed459981ceef85ccfa2, type: 3}
+  SkinCane2: {fileID: 21300000, guid: 44849f15ca96a084c847ace2bbd979ef, type: 3}
+  SkinCane3: {fileID: 21300000, guid: 05b4d5180a8f970408aff54090ef9572, type: 3}
 --- !u!212 &212566851484494516
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -103,12 +110,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.31315553, g: 0.90588236, b: 0.19215684, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 866e3d1cbd7c8ed459981ceef85ccfa2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

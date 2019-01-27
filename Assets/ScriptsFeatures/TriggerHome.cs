@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class TriggerHome : MonoBehaviour {
 
+    public Animator animatorFish;
+
     public RessourceManager my_RM;
 
     public int fishRessource = 0;
@@ -80,6 +82,8 @@ public class TriggerHome : MonoBehaviour {
                         Debug.Log("Lvl2Aquarium");
                         GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl1Time = false;
                         GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl2Time = true;
+                        animatorFish.SetBool("FishLvl1", true);
+                        animatorFish.SetBool("FishLvl0", false);
                     }
 
                     else if (GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl2Time == true && GameObject.FindGameObjectWithTag("Home").GetComponent<TriggerHome>().superFishRessource > 0)
@@ -87,6 +91,8 @@ public class TriggerHome : MonoBehaviour {
                         Debug.Log("Lvl3Aquarium");
                         GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl2Time = false;
                         GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl3Time = true;
+                        animatorFish.SetBool("FishLvl2", true);
+                        animatorFish.SetBool("FishLvl1", false);
                     }
 
                     else if (GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl3Time == true && GameObject.FindGameObjectWithTag("Home").GetComponent<TriggerHome>().gigaFishRessource > 0)
@@ -94,6 +100,8 @@ public class TriggerHome : MonoBehaviour {
                         Debug.Log("Lvl4Aquarium");
                         GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl3Time = false;
                         GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl4Time = true;
+                        animatorFish.SetBool("FishLvl3", true);
+                        animatorFish.SetBool("FishLvl2", false);
                     }
 
                     else if (GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl4Time == true)

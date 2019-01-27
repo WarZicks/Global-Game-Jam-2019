@@ -30,6 +30,11 @@ public class Upgrade : MonoBehaviour {
 
     public PlayerMovement my_PM;
 
+    public GameObject UIballoonLvl2;
+    public GameObject UIballoonLvl3;
+    public GameObject UIcaneLvl2;
+    public GameObject UIcaneLvl3;
+
     // Use this for initialization
     void Start () {
         my_Home = GameObject.FindGameObjectWithTag("Home").GetComponent<TriggerHome>();
@@ -93,6 +98,8 @@ public class Upgrade : MonoBehaviour {
             my_FishingCane.lvl2Fish = true;
             upgradeFishingCaneLvl2Done = true;
             soundUpgrade.Play();
+            UIcaneLvl2.SetActive(false);
+            UIcaneLvl3.SetActive(true);
         }
     }
     public void UpgradeFishingCaneLVL3()
@@ -117,6 +124,8 @@ public class Upgrade : MonoBehaviour {
             my_Balloon.lvl2Endu = true;
             upgradeBalloonLvl2Done = true;
             soundUpgrade.Play();
+            UIballoonLvl2.SetActive(false);
+            UIballoonLvl3.SetActive(true);
         }
     }
     public void UpgradeBalloonLVL3()

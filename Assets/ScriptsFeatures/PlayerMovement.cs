@@ -15,11 +15,12 @@ public class PlayerMovement : MonoBehaviour {
     public bool movingRight = false;
     public bool movingUp = false;
     public bool movingDown = false;
-   
+
+    public Vector2 lastDirection;
 
     // Use this for initialization
     void Start () {
-
+        lastDirection = Vector2.zero;
 	}
 	
 	// Update is called once per frame
@@ -43,6 +44,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             movingLeft = false;
             animator.SetFloat("Speed", 0);
+            lastDirection = new Vector2(-1, 0);
         }
 
         //Move Right
@@ -56,6 +58,7 @@ public class PlayerMovement : MonoBehaviour {
             animator.SetBool("FaceRight", true);
             animator.SetBool("FaceUp", false);
             animator.SetBool("FaceDown", false);
+            lastDirection = new Vector2(1, 0);
         }
         if (Input.GetKeyUp(KeyCode.D))
         {
@@ -74,6 +77,7 @@ public class PlayerMovement : MonoBehaviour {
             animator.SetBool("FaceRight", false);
             animator.SetBool("FaceUp", false);
             animator.SetBool("FaceDown", true);
+            lastDirection = new Vector2(0, -1);
         }
         if (Input.GetKeyUp(KeyCode.S))
         {
@@ -92,6 +96,7 @@ public class PlayerMovement : MonoBehaviour {
             animator.SetBool("FaceRight", false);
             animator.SetBool("FaceUp", true);
             animator.SetBool("FaceDown", false);
+            lastDirection = new Vector2(0, 1);
         }
         if (Input.GetKeyUp(KeyCode.Z))
         {

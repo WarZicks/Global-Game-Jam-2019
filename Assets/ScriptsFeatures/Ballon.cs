@@ -15,6 +15,8 @@ public class Ballon : MonoBehaviour {
 
     public AudioSource soundPlayBall;
 
+    public PlayerMovement my_PM;
+
     // Use this for initialization
     void Start () {
         BallonOn = true;
@@ -22,6 +24,9 @@ public class Ballon : MonoBehaviour {
         GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().CanRun=true;
 
         soundPlayBall = GetComponent<AudioSource>();
+
+        my_PM = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+
     }
 
     // Update is called once per frame
@@ -30,6 +35,10 @@ public class Ballon : MonoBehaviour {
         {
             Debug.Log("Playing");
             PlayBall++;
+
+            GetComponent<Rigidbody2D>().AddForce(my_PM.lastDirection * 50f);
+            Debug.Log(my_PM.lastDirection);
+
             if (!soundPlayBall.isPlaying)
             {
                 soundPlayBall.Play();

@@ -23,13 +23,15 @@ GameObject:
   - component: {fileID: 58346228943546760}
   - component: {fileID: 114804362406937320}
   - component: {fileID: 82013161592433528}
+  - component: {fileID: 50028079386249892}
+  - component: {fileID: 58194134378944156}
   m_Layer: 0
   m_Name: Ballon
-  m_TagString: Untagged
+  m_TagString: Ballon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4589607358719342
 Transform:
   m_ObjectHideFlags: 1
@@ -43,6 +45,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50028079386249892
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1294010012495158}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.5
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &58194134378944156
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1294010012495158}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 8f1479d746f908341bf4a1a6d789b606, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!58 &58346228943546760
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -57,7 +94,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.24
+  m_Radius: 0.2
 --- !u!82 &82013161592433528
 AudioSource:
   m_ObjectHideFlags: 1
@@ -171,6 +208,7 @@ MonoBehaviour:
   lvl3Endu: 0
   inTrigger: 0
   soundPlayBall: {fileID: 82013161592433528}
+  my_PM: {fileID: 0}
 --- !u!212 &212011412274830150
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -207,7 +245,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.87782353, g: 0.9056604, b: 0.19223925, a: 1}
+  m_Color: {r: 0.9105535, g: 0.9622642, b: 0.05900679, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

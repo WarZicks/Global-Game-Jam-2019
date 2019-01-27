@@ -12,6 +12,9 @@ public class TriggerHome : MonoBehaviour {
     public int superFishRessource = 0;
     public int gigaFishRessource = 0;
     public int woodRessource = 0;
+    public int rocheRessource = 0;
+    public int woodPlusRessource = 0;
+    public int rochePlusRessource = 0;
 
     public AudioSource soundPutItem;
 
@@ -42,6 +45,12 @@ public class TriggerHome : MonoBehaviour {
             GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>().gigaFish = 0;
             woodRessource += GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().wood;
             GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().wood = 0;
+            rocheRessource += GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().roche;
+            GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().roche = 0;
+            woodPlusRessource += GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().woodPlus;
+            GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().woodPlus = 0;
+            rochePlusRessource += GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().rochePlus;
+            GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().rochePlus = 0;
 
             if (my_RM.redItem >= 1)
             {

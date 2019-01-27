@@ -86,7 +86,7 @@ public class Upgrade : MonoBehaviour {
     //FishingCane Upgrade
     public void UpgradeFishingCaneLVL2()
     {
-        if (myBoardIsUp == true && my_Home.woodRessource >= 3 && my_FishingCane.lvl1Fish == true && upgradeFishingCaneLvl2Done == false)
+        if (myBoardIsUp == true && my_Home.woodRessource >= 8 && my_FishingCane.lvl1Fish == true && upgradeFishingCaneLvl2Done == false)
         {
             Debug.Log("FichingCaneLvl2");
             my_FishingCane.lvl1Fish = false;
@@ -97,7 +97,7 @@ public class Upgrade : MonoBehaviour {
     }
     public void UpgradeFishingCaneLVL3()
     {
-        if (myBoardIsUp == true && my_Home.woodRessource >= 5 && my_FishingCane.lvl2Fish == true && upgradeFishingCaneLvl3Done == false)
+        if (myBoardIsUp == true && my_Home.woodPlusRessource >= 8 && my_FishingCane.lvl2Fish == true && upgradeFishingCaneLvl3Done == false)
         {
             Debug.Log("FichingCaneLvl3");
             my_FishingCane.lvl2Fish = false;
@@ -110,7 +110,7 @@ public class Upgrade : MonoBehaviour {
     //Balloon Upgrade
     public void UpgradeBalloonLVL2()
     {
-        if (myBoardIsUp == true && my_Home.woodRessource >= 3 && my_Balloon.lvl1Endu == true && upgradeBalloonLvl2Done == false)
+        if (myBoardIsUp == true && my_Home.rocheRessource >= 6 && my_Balloon.lvl1Endu == true && upgradeBalloonLvl2Done == false)
         {
             Debug.Log("BallonLvl2");
             my_Balloon.lvl1Endu = false;
@@ -121,7 +121,7 @@ public class Upgrade : MonoBehaviour {
     }
     public void UpgradeBalloonLVL3()
     {
-        if (myBoardIsUp == true && my_Home.woodRessource >= 1 && my_Balloon.lvl2Endu == true && upgradeBalloonLvl3Done == false)
+        if (myBoardIsUp == true && my_Home.rochePlusRessource >= 6 && my_Balloon.lvl2Endu == true && upgradeBalloonLvl3Done == false)
         {
             Debug.Log("BallonLvl2");
             my_Balloon.lvl2Endu = false;

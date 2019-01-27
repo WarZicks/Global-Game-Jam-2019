@@ -9,6 +9,9 @@ public class RessourceManager : MonoBehaviour {
     public int greenItem;
 
     public int wood;
+    public int roche;
+    public int woodPlus;
+    public int rochePlus;
 
     public GameObject Aquarium;
     public GameObject Ballon;

@@ -18,6 +18,9 @@ public class Aquarium : MonoBehaviour {
 
     public AudioSource songPlayAquarium;
 
+    public GameObject FeedbackTime;
+    private float TimerFeedback = 3f;
+
     // Use this for initialization
     void Start () {
         AquaOn = true;
@@ -56,16 +59,19 @@ public class Aquarium : MonoBehaviour {
                 {
                     GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime += GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime * 1.05f;
                     GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft += GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft * 1.05f;
+                    StartCoroutine(FeebackTime());
                 }
                 else if (lvl3Time == true)
                 {
                     GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime += GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime * 1.1f;
                     GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft += GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft * 1.1f;
+                    StartCoroutine(FeebackTime());
                 }
                 else if (lvl4Time == true)
                 {
                     GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime += GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime * 1.2f;
                     GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft += GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft * 1.2f;
+                    StartCoroutine(FeebackTime());
                 }
             }
         }
@@ -76,5 +82,12 @@ public class Aquarium : MonoBehaviour {
         my_PM.disableInput = true;
         yield return new WaitForSeconds(timerInput);
         my_PM.disableInput = false;
+    }
+
+    IEnumerator FeebackTime()
+    {
+        FeedbackTime.SetActive(true);
+        yield return new WaitForSeconds(TimerFeedback);
+        FeedbackTime.SetActive(false);
     }
 }

@@ -17,6 +17,10 @@ public class Ballon : MonoBehaviour {
 
     public PlayerMovement my_PM;
 
+    public Sprite SkinBallon1;
+    public Sprite SkinBallon2;
+    public Sprite SkinBallon3;
+
     // Use this for initialization
     void Start () {
         BallonOn = true;
@@ -31,6 +35,20 @@ public class Ballon : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+
+        if (lvl1Endu == true)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = SkinBallon1;
+        }
+        if (lvl2Endu == true)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = SkinBallon2;
+        }
+        if (lvl3Endu == true)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = SkinBallon3;
+        }
+
         if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true)
         {
             Debug.Log("Playing");

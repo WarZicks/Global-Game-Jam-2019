@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 82805383583493168}
   m_Layer: 0
   m_Name: TriggerHome
-  m_TagString: Untagged
+  m_TagString: Home
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1831999157506136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.501169, y: 5.008531, z: -0.48046875}
-  m_LocalScale: {x: 3.18882, y: 4.4192123, z: 2.4012198}
+  m_LocalPosition: {x: 7.02, y: 5.105, z: 0}
+  m_LocalScale: {x: 3.0006795, y: 4.494339, z: 2.4012198}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,7 +55,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.009403706, y: -0.42068487}
   m_SpriteTilingProperty:
     border: {x: 0.65, y: 0.65, z: 0.65, w: 0.65}
     pivot: {x: 0.5, y: 0.5}
@@ -66,7 +66,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.12, y: 2.56}
+  m_Size: {x: 3.427219, y: 1.7186302}
   m_EdgeRadius: 0
 --- !u!82 &82805383583493168
 AudioSource:
@@ -78,7 +78,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 348f6971c9639f845bcb851a97f3c8fa, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -174,11 +174,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec720405c02355408a01bf2afcb5048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatorFish: {fileID: 0}
   my_RM: {fileID: 0}
   fishRessource: 0
   superFishRessource: 0
   gigaFishRessource: 0
   woodRessource: 0
+  rocheRessource: 0
+  woodPlusRessource: 0
+  rochePlusRessource: 0
   soundPutItem: {fileID: 82805383583493168}
 --- !u!212 &212030309536527984
 SpriteRenderer:

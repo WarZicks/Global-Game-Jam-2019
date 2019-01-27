@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Lac : MonoBehaviour {
 
+    public float timerInput;
+
     public int fish = 0;
     public int superFish = 0;
     public int gigaFish = 0;
@@ -11,19 +13,23 @@ public class Lac : MonoBehaviour {
     public bool inTrigger = false;
     public bool getRefCane = false;
 
+    public PlayerMovement my_PM;
+
     AudioSource soundFishing;
 
 	// Use this for initialization
 	void Start () {
         soundFishing = GetComponent<AudioSource>();
+        my_PM = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 
         if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true && getRefCane == true)
         {
             Fishing();
+            StartCoroutine(TimerForInput());
             if (!soundFishing.isPlaying)
             {
                 soundFishing.Play();
@@ -76,5 +82,12 @@ public class Lac : MonoBehaviour {
             }
         }
 
+    }
+
+    IEnumerator TimerForInput()
+    {
+        my_PM.disableInput = true;
+        yield return new WaitForSeconds(timerInput);
+        my_PM.disableInput = false;
     }
 }

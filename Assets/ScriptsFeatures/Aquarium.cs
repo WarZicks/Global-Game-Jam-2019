@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Aquarium : MonoBehaviour {
 
+    public float timerInput;
+
     public bool AquaOn = false;
     public int SeeFish = 0;
 
@@ -12,12 +14,16 @@ public class Aquarium : MonoBehaviour {
     public bool lvl3Time = false;
     public bool lvl4Time = false;
 
+    public PlayerMovement my_PM;
+
     public AudioSource songPlayAquarium;
 
     // Use this for initialization
     void Start () {
         AquaOn = true;
         lvl1Time = true;
+
+        my_PM = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
 
         songPlayAquarium = GetComponent<AudioSource>();
 	}
@@ -33,6 +39,8 @@ public class Aquarium : MonoBehaviour {
         {
             Debug.Log("SeeFish");
             SeeFish++;
+            StartCoroutine(TimerForInput());
+
             if (!songPlayAquarium.isPlaying)
             {
                 songPlayAquarium.Play();
@@ -61,5 +69,12 @@ public class Aquarium : MonoBehaviour {
                 }
             }
         }
+    }
+
+    IEnumerator TimerForInput()
+    {
+        my_PM.disableInput = true;
+        yield return new WaitForSeconds(timerInput);
+        my_PM.disableInput = false;
     }
 }

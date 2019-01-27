@@ -14,6 +14,10 @@ public class Timer : MonoBehaviour {
     public GameObject timesUp;
     public bool InHome;
 
+    public GameObject respawnPoint;
+    public GameObject player;
+    public PlayerMovement my_PM;
+
 	// Use this for initialization
 	void Start () {
 
@@ -23,6 +27,9 @@ public class Timer : MonoBehaviour {
 
         my_RM = GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>();
         my_Lac = GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        respawnPoint = GameObject.FindGameObjectWithTag("Respawn");
+        my_PM = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -39,9 +46,9 @@ public class Timer : MonoBehaviour {
             }
             else
             {
-                timesUp.SetActive(true);
-                Time.timeScale = 0;
+                my_PM.disableInput = true;
                 LoseItems();
+                Death();
             }
         }
 	}
@@ -54,5 +61,11 @@ public class Timer : MonoBehaviour {
         my_RM.redItem = 0;
         my_RM.blueItem = 0;
         my_RM.greenItem = 0;
+    }
+
+    void Death()
+    {
+        player.transform.position = respawnPoint.transform.position;
+        my_PM.disableInput = false;
     }
 }

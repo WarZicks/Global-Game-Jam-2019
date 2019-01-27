@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class Bed : MonoBehaviour {
 
+    public float timerInput;
+
     public bool inTrigger = false;
 
     public AudioSource soundSleep;
 
+    public PlayerMovement my_PM;
+
 	// Use this for initialization
 	void Start () {
         soundSleep = GetComponent<AudioSource>();
-	}
+        my_PM = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,6 +26,7 @@ public class Bed : MonoBehaviour {
             GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime;
             GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft = GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu;
             soundSleep.Play();
+            StartCoroutine(TimerForInput());
 
             if (GameObject.FindGameObjectWithTag("Aquarium") != null)
             {
@@ -47,5 +53,12 @@ public class Bed : MonoBehaviour {
         {
             inTrigger = false;
         }
+    }
+
+    IEnumerator TimerForInput()
+    {
+        my_PM.disableInput = true;
+        yield return new WaitForSeconds(timerInput);
+        my_PM.disableInput = false;
     }
 }

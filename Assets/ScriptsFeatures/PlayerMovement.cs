@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour {
     public bool movingUp = false;
     public bool movingDown = false;
 
+    public bool disableInput = false;
+
     public Vector2 lastDirection;
 
     // Use this for initialization
@@ -29,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
         //Movement
         #region
         //Move Left
-        if (Input.GetKey(KeyCode.Q) && !movingDown && !movingRight && !movingUp)
+        if (Input.GetKey(KeyCode.Q) && !movingDown && !movingRight && !movingUp && !disableInput)
         {
             transform.position += transform.right * -speed * Time.deltaTime;
             speed = 5;
@@ -48,7 +50,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         //Move Right
-        if (Input.GetKey(KeyCode.D) && !movingDown && !movingLeft && !movingUp)
+        if (Input.GetKey(KeyCode.D) && !movingDown && !movingLeft && !movingUp && !disableInput)
         {
             transform.position += transform.right * speed * Time.deltaTime;
             speed = 5;
@@ -67,7 +69,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         //Move Down 
-        if (Input.GetKey(KeyCode.S) && !movingLeft && !movingRight && !movingUp)
+        if (Input.GetKey(KeyCode.S) && !movingLeft && !movingRight && !movingUp && !disableInput)
         {
             transform.position += transform.up * -speed * Time.deltaTime;
             speed = 5;
@@ -86,7 +88,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         //Move Up
-        if (Input.GetKey(KeyCode.Z) && !movingDown && !movingRight && !movingLeft)
+        if (Input.GetKey(KeyCode.Z) && !movingDown && !movingRight && !movingLeft && !disableInput)
         {
             transform.position += transform.up * speed * Time.deltaTime;
             speed = 5;
@@ -111,7 +113,7 @@ public class PlayerMovement : MonoBehaviour {
             {
                 #region
                 //Run Left
-                if (Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.LeftShift) && !movingDown && !movingRight && !movingUp)
+                if (Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.LeftShift) && !movingDown && !movingRight && !movingUp && !disableInput)
                 {
                     transform.position += transform.right * -speed * Time.deltaTime;
                     speed = 10;
@@ -123,7 +125,7 @@ public class PlayerMovement : MonoBehaviour {
                 }
 
                 //Run Right
-                if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift) && !movingDown && !movingLeft && !movingUp)
+                if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift) && !movingDown && !movingLeft && !movingUp && !disableInput)
                 {
                     transform.position += transform.right * speed * Time.deltaTime;
                     speed = 10;
@@ -135,7 +137,7 @@ public class PlayerMovement : MonoBehaviour {
                 }
 
                 //Run Down 
-                if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift) && !movingLeft && !movingRight && !movingUp)
+                if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift) && !movingLeft && !movingRight && !movingUp && !disableInput)
                 {
                     transform.position += transform.up * -speed * Time.deltaTime;
                     speed = 10;
@@ -147,7 +149,7 @@ public class PlayerMovement : MonoBehaviour {
                 }
 
                 //Run Up
-                if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.LeftShift) && !movingDown && !movingRight && !movingLeft)
+                if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.LeftShift) && !movingDown && !movingRight && !movingLeft && !disableInput)
                 {
                     transform.position += transform.up * speed * Time.deltaTime;
                     speed = 10;

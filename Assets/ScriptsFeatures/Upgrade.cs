@@ -28,12 +28,15 @@ public class Upgrade : MonoBehaviour {
     public BlueItem my_TakeBalloon;
     public RedItem my_TakeAquarium;
 
+    public PlayerMovement my_PM;
+
     // Use this for initialization
     void Start () {
         my_Home = GameObject.FindGameObjectWithTag("Home").GetComponent<TriggerHome>();
         my_TakeFishingCane = GameObject.FindGameObjectWithTag("GreenItem").GetComponent<GreenItem>();
         my_TakeBalloon = GameObject.FindGameObjectWithTag("BlueItem").GetComponent<BlueItem>();
         my_TakeAquarium = GameObject.FindGameObjectWithTag("RedItem").GetComponent<RedItem>();
+        my_PM = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
 
         soundUpgrade = GetComponent<AudioSource>();
 
@@ -47,6 +50,7 @@ public class Upgrade : MonoBehaviour {
         {
             upgradeBoardUI.SetActive(true);
             myBoardIsUp = true;
+            my_PM.disableInput = true;
         }
 
     }
@@ -131,6 +135,7 @@ public class Upgrade : MonoBehaviour {
     {
         myBoardIsUp = false;
         upgradeBoardUI.SetActive(false);
+        my_PM.disableInput = false;
     }
 
 }

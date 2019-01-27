@@ -110,6 +110,7 @@ public class Upgrade : MonoBehaviour {
             my_FishingCane.lvl2Fish = false;
             my_FishingCane.lvl3Fish = true;
             upgradeFishingCaneLvl3Done = true;
+            UIcaneLvl3.SetActive(false);
             soundUpgrade.Play();
         }
     }
@@ -136,6 +137,7 @@ public class Upgrade : MonoBehaviour {
             my_Balloon.lvl2Endu = false;
             my_Balloon.lvl3Endu = true;
             upgradeBalloonLvl3Done = true;
+            UIballoonLvl3.SetActive(false);
             soundUpgrade.Play();
         }
     }

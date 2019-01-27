@@ -26,7 +26,10 @@ public class Bed : MonoBehaviour {
         {
             Debug.Log("Sleep");
             GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().timeLeft = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().maxTime;
-            GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft = GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu;
+            if (GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().CanRun)
+            {
+                GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().enduLeft = GameObject.FindGameObjectWithTag("Endurance").GetComponent<Endurance>().maxEndu;
+            }
             soundSleep.Play();
             StartCoroutine(TimerForInput());
 

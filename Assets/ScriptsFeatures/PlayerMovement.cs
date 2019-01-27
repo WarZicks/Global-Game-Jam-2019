@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public Animator animator;
 
-    public float speed;
+    public float speed, RunSpeed;
 
     private Rigidbody2D rbPlayer;
     private Vector2 moveVelocity;
@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour {
                 if (Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.LeftShift) && !movingDown && !movingRight && !movingUp && !disableInput)
                 {
                     transform.position += transform.right * -speed * Time.deltaTime;
-                    speed = 10;
+                    speed = RunSpeed;
                     movingLeft = true;
                 }
                 if (Input.GetKeyUp(KeyCode.Q))
@@ -132,7 +132,7 @@ public class PlayerMovement : MonoBehaviour {
                 if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift) && !movingDown && !movingLeft && !movingUp && !disableInput)
                 {
                     transform.position += transform.right * speed * Time.deltaTime;
-                    speed = 10;
+                    speed = RunSpeed;
                     movingRight = true;
                 }
                 if (Input.GetKeyUp(KeyCode.D))
@@ -144,7 +144,7 @@ public class PlayerMovement : MonoBehaviour {
                 if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift) && !movingLeft && !movingRight && !movingUp && !disableInput)
                 {
                     transform.position += transform.up * -speed * Time.deltaTime;
-                    speed = 10;
+                    speed = RunSpeed;
                     movingDown = true;
                 }
                 if (Input.GetKeyUp(KeyCode.S))
@@ -156,7 +156,7 @@ public class PlayerMovement : MonoBehaviour {
                 if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.LeftShift) && !movingDown && !movingRight && !movingLeft && !disableInput)
                 {
                     transform.position += transform.up * speed * Time.deltaTime;
-                    speed = 10;
+                    speed = RunSpeed;
                     movingUp = true;
                 }
                 if (Input.GetKeyUp(KeyCode.Z))
@@ -175,28 +175,28 @@ public class PlayerMovement : MonoBehaviour {
         {
             if (GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().AquaOn == true)
             {
-                if (Input.GetKeyDown(KeyCode.O) && GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl1Time == true && GameObject.FindGameObjectWithTag("Home").GetComponent<TriggerHome>().fishRessource>0)
+                if (GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl1Time == true && GameObject.FindGameObjectWithTag("Home").GetComponent<TriggerHome>().fishRessource>0)
                 {
                     Debug.Log("Lvl2Aquarium");
                     GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl1Time = false;
                     GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl2Time = true;
                 }
 
-                else if (Input.GetKeyDown(KeyCode.O) && GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl2Time == true && GameObject.FindGameObjectWithTag("Home").GetComponent<TriggerHome>().superFishRessource > 0)
+                else if (GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl2Time == true && GameObject.FindGameObjectWithTag("Home").GetComponent<TriggerHome>().superFishRessource > 0)
                 {
                     Debug.Log("Lvl3Aquarium");
                     GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl2Time = false;
                     GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl3Time = true;
                 }
 
-                else if (Input.GetKeyDown(KeyCode.O) && GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl3Time == true && GameObject.FindGameObjectWithTag("Home").GetComponent<TriggerHome>().gigaFishRessource > 0)
+                else if (GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl3Time == true && GameObject.FindGameObjectWithTag("Home").GetComponent<TriggerHome>().gigaFishRessource > 0)
                 {
                     Debug.Log("Lvl4Aquarium");
                     GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl3Time = false;
                     GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl4Time = true;
                 }
 
-                else if (Input.GetKeyDown(KeyCode.O) && GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl4Time == true)
+                else if (GameObject.FindGameObjectWithTag("Aquarium").GetComponent<Aquarium>().lvl4Time == true)
                 {
                     Debug.Log("MaxLvlAquarium");
                 }

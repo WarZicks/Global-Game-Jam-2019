@@ -120,10 +120,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 95857354312698820}
   speed: 5
+  RunSpeed: 7
   movingLeft: 0
   movingRight: 0
   movingUp: 0
   movingDown: 0
+  fish: 0
+  superFish: 0
+  gigaFish: 0
   disableInput: 0
   lastDirection: {x: 0, y: 0}
 --- !u!212 &212107262906451222

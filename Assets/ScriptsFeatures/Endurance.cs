@@ -15,7 +15,7 @@ public class Endurance : MonoBehaviour {
 	void Start () {
         maxEndu = 150f*Time.deltaTime;
         EnduranceBar = GetComponent<Image>();      
-        enduLeft = maxEndu;
+        //enduLeft = maxEndu;
 	}
 	
 	// Update is called once per frame

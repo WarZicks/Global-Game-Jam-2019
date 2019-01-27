@@ -32,19 +32,19 @@ public class RessourceManager : MonoBehaviour {
 
     public void AddRedItem()
     {
-        redItem++;
         my_UIManager.RedItemUI();
+        redItem++;
     }
 
     public void AddBlueItem()
     {
-        blueItem++;
         my_UIManager.BlueItemUI();
+        blueItem++;
     }
 
     public void AddGreenItem()
     {
-        greenItem++;
         my_UIManager.GreenItemUI();
+        greenItem++;
     }
 }

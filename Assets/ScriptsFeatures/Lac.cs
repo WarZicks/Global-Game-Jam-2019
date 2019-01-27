@@ -15,6 +15,7 @@ public class Lac : MonoBehaviour {
 
     public PlayerMovement my_PM;
     public GreenItem my_GreenItem;
+    public UIManager my_UIManager;
 
     AudioSource soundFishing;
 
@@ -23,6 +24,7 @@ public class Lac : MonoBehaviour {
         soundFishing = GetComponent<AudioSource>();
         my_PM = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         my_GreenItem = GameObject.FindGameObjectWithTag("GreenItem").GetComponent<GreenItem>();
+        my_UIManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -71,19 +73,22 @@ public class Lac : MonoBehaviour {
             {
                 if (GameObject.FindGameObjectWithTag("FishingCane").GetComponent<FishingCane>().lvl1Fish == true)
                 {
-                    fish++;
+                    my_PM.fish++;
+                    my_UIManager.StandardFishItemUI();
                     Debug.Log(fish);
                 }
 
                 else if (GameObject.FindGameObjectWithTag("FishingCane").GetComponent<FishingCane>().lvl2Fish == true)
                 {
-                    superFish++;
+                    my_PM.superFish++;
+                    my_UIManager.RareFishItemUI();
                     Debug.Log(superFish);
                 }
 
                 else if (GameObject.FindGameObjectWithTag("FishingCane").GetComponent<FishingCane>().lvl3Fish == true)
                 {
-                    gigaFish++;
+                    my_PM.gigaFish++;
+                    my_UIManager.GoldFishItemUI();
                     Debug.Log(gigaFish);
                 }
             }

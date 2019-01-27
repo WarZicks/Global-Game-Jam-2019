@@ -39,12 +39,12 @@ public class TriggerHome : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>().InHome = true;
-            fishRessource += GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>().fish;
-            GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>().fish = 0;
-            superFishRessource += GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>().superFish;
-            GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>().superFish = 0;
-            gigaFishRessource += GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>().gigaFish;
-            GameObject.FindGameObjectWithTag("Lac").GetComponent<Lac>().gigaFish = 0;
+            fishRessource += GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().fish;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().fish = 0;
+            superFishRessource += GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().superFish;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().superFish = 0;
+            gigaFishRessource += GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().gigaFish;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().gigaFish = 0;
             woodRessource += GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().wood;
             GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().wood = 0;
             rocheRessource += GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().roche;

@@ -16,6 +16,10 @@ public class PlayerMovement : MonoBehaviour {
     public bool movingUp = false;
     public bool movingDown = false;
 
+    public int fish = 0;
+    public int superFish = 0;
+    public int gigaFish = 0;
+
     public bool disableInput = false;
 
     public Vector2 lastDirection;

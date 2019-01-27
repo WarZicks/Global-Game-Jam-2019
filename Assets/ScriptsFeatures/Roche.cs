@@ -8,11 +8,14 @@ public class Roche : MonoBehaviour
     public bool inTrigger = false;
 
     public AudioSource soundCollectItem;
+    public UIManager my_UIManager;
 
     // Use this for initialization
     void Start()
     {
         soundCollectItem = GetComponent<AudioSource>();
+        my_UIManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
+
     }
 
     // Update is called once per frame
@@ -24,6 +27,7 @@ public class Roche : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             soundCollectItem.Play();
+            my_UIManager.DarkRockItemUI();
             Destroy(gameObject, 1f);
         }
     }

@@ -14,11 +14,9 @@ public class FishingCane : MonoBehaviour {
     void Start () {
         FishCaneOn = true;
         lvl1Fish = true;
-		
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 }

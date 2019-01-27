@@ -14,6 +14,7 @@ public class Lac : MonoBehaviour {
     public bool getRefCane = false;
 
     public PlayerMovement my_PM;
+    public GreenItem my_GreenItem;
 
     AudioSource soundFishing;
 
@@ -21,12 +22,18 @@ public class Lac : MonoBehaviour {
 	void Start () {
         soundFishing = GetComponent<AudioSource>();
         my_PM = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        my_GreenItem = GameObject.FindGameObjectWithTag("GreenItem").GetComponent<GreenItem>();
     }
 
     // Update is called once per frame
     void Update () {
 
-        if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true && getRefCane == true)
+        if (my_GreenItem.doRefForCane == true)
+        {
+            getRefCane = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true && getRefCane == true && my_PM.disableInput == false)
         {
             Fishing();
             StartCoroutine(TimerForInput());

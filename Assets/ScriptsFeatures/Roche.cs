@@ -24,6 +24,7 @@ public class Roche : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true)
         {
             GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().roche++;
+            GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().UpdateNumberStoneTxt();
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             soundCollectItem.Play();

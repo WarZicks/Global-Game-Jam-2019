@@ -21,6 +21,7 @@ public class Wood : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true)
         {
             GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().wood++;
+            GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().UpdateNumberWoodTxt();
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             soundCollectItem.Play();

@@ -24,6 +24,7 @@ public class RochePlus : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return) && inTrigger == true)
         {
             GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().rochePlus++;
+            GameObject.FindGameObjectWithTag("RessourceManager").GetComponent<RessourceManager>().UpdateNumberStonePlusTxt();
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             soundCollectItem.Play();
